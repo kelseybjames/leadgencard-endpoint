@@ -123,10 +123,10 @@ def process_input (method, request)
   tw_userId = request["tw_userId"] ? request["tw_userId"] : nil 
   token = request["token"] ? request["token"] : nil
   card = request["card"] ? request["card"] : nil
-  # Testing source addition
+  # Source is optional
   source = request["source"] ? request["source"] : nil
 
-  if (name && email && screen_name && tw_userId && token && card && source)
+  if (name && email && screen_name && tw_userId && token && card)
     write_to_cache(card, name, email, screen_name, tw_userId, token, method, source)
     true
   else 
