@@ -26,7 +26,7 @@
         <td><%= record["name"] %></td>
         <td><%= record["email"] %></td>
         <td><% if record["token"].nil? %>n/a<% else %><%= record["token"] %><% end %></td>
-        <td><% if record["source"].nil %>Unknown<% else %><%= record["source"] %><% end %></td>
+        <td><% if record["source"].nil? %>Unknown<% else %><%= record["source"] %><% end %></td>
     </tr>
     <% end %>
     </tbody>
