@@ -57,7 +57,7 @@ confirm your lead information was sent from Twitter to the example test server.<
   <h4>Test endpoint with custom parameters</h4>
 <p>Below is a form where you can submit custom lead captures to your server. 
 
-<form role="form" action='/endpoint' method="POST">
+<form role="form" action='/endpoint' method="GET">
 <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Firstname Lastname">
@@ -65,8 +65,8 @@ confirm your lead information was sent from Twitter to the example test server.<
     <input type="email" class="form-control" id="email" name="email" placeholder="foo@bar.com">
     <label for="screen_name">Screen Name</label>
     <input type="text" class="form-control" id="screen_name" name="screen_name" placeholder="Username">
-    <input type="hidden" id="tw_userId" value="123456789">
-    <input type="hidden" id="token" value="SOME_TOKEN">
+    <input type="hidden" id="tw_userId" name="tw_userId" value="123456789">
+    <input type="hidden" id="token" name="token" value="SOME_TOKEN">
     <input type="hidden" id="card" name="card" value="12345">
     <input type="hidden" id="source" name="source" value="https://kelsey-leadgencard.herokuapp.com/">
 </div>
