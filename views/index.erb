@@ -61,14 +61,14 @@ confirm your lead information was sent from Twitter to the example test server.<
 <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Firstname Lastname">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="foo@bar.com">
     <label for="screen_name">Screen Name</label>
     <input type="text" class="form-control" id="screen_name" name="screen_name" placeholder="Username">
-    <label for="name">Email</label>
-    <input type="text" class="form-control" id="email" name="email" placeholder="foo@bar.com">
+    <input type="hidden" id="tw_userId" value="123456789">
+    <input type="hidden" id="token" value="SOME_TOKEN">
     <input type="hidden" id="card" name="card" value="12345">
     <input type="hidden" id="source" name="source" value="https://kelsey-leadgencard.herokuapp.com/">
-    <input type="hidden" id="token" value="SOME_TOKEN">
-    <input type="hidden" id="tw_userId" value="123456789">
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
