@@ -106,7 +106,7 @@ def write_to_cache(card_id, name, email, screen_name, tw_userId, token, method, 
 
   # this is a demo app, we have no need to keep the email we get, so let's just record if we think we got one
   email_found = (email.length > 5) ? "Yes" : "No"
-  card = {:name => name, :email => email_found, :screen_name => screen_name, :tw_userId => tw_userId, :token => token, :method => method}
+  card = {"name" => name, "email" => email_found, "screen_name" => screen_name, "tw_userId" => tw_userId, "token" => token, "method" => method, "source" => source}
 
   data.push(card)
 
@@ -117,17 +117,17 @@ def process_input (method, request)
   # we always expect these fields
   # name, email, screen_name, user_id, token, card
   # TODO we could get custom fields, store those too
-  name = request[:name] ? request[:name] : nil
-  email = request[:email] ? request[:email] : nil
-  screen_name = request[:screen_name] ? request[:screen_name] : nil
-  tw_userId = request[:tw_userId] ? request[:tw_userId] : nil 
-  token = request[:token] ? request[:token] : nil
-  card = request[:card] ? request[:card] : nil
+  name = request["name"] ? request["name"] : nil
+  email = request["email"] ? request["email"] : nil
+  screen_name = request["screen_name"] ? request["screen_name"] : nil
+  tw_userId = request["tw_userId"] ? request["tw_userId"] : nil 
+  token = request["token"] ? request["token"] : nil
+  card = request["card"] ? request["card"] : nil
   # Testing source addition
-  # source = request[:source] ? request[:source] : nil
+  source = request["source"] ? request["source"] : nil
 
-  if (name && email && screen_name && tw_userId && token && card)
-    write_to_cache(card, name, email, screen_name, tw_userId, token, method)
+  if (name && email && screen_name && tw_userId && token && card && source)
+    write_to_cache(card, name, email, screen_name, tw_userId, token, method, source)
     true
   else 
     false
