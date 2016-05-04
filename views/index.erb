@@ -55,7 +55,7 @@ confirm your lead information was sent from Twitter to the example test server.<
 <p>Afterwards, come back here and enter the card id <strong>12345</strong> below.</p>
 
   <h4>Test endpoint with custom parameters</h4>
-<p>Below is a form where you can submit custom lead captures to your server. 
+<p>Below is a form where you can submit custom lead captures to your server via a GET request. Here, we have included the user ID, token, and card as hidden fields, as well as an optional source parameter.
 
 <form role="form" action='/endpoint' method="GET">
 <div class="form-group">
@@ -68,7 +68,7 @@ confirm your lead information was sent from Twitter to the example test server.<
     <input type="hidden" id="tw_userId" name="tw_userId" value="123456789">
     <input type="hidden" id="token" name="token" value="SOME_TOKEN">
     <input type="hidden" id="card_value" name="card" value="12345">
-    <input type="hidden" id="source" name="source" value="https://kelsey-leadgencard.herokuapp.com/">
+    <input type="hidden" id="source" name="source" value="https://#{<%= request.host %>}">
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
