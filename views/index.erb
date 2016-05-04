@@ -70,7 +70,7 @@ confirm your lead information was sent from Twitter to the example test server.<
     <input type="hidden" id="card_value" name="card" value="12345">
     <input type="hidden" id="source" name="source" value="https://<%= request.host %>">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" id="create-custom-capture">Submit</button>
 </form>
 
 <p>Afterwards, come back here and enter the card id <strong>12345</strong> below.</p>
@@ -118,7 +118,7 @@ twurl -H ads-api.twitter.com -X POST -d "account_id=MY_ACCOUNT_ID&name=Lead Gen 
 </pre>
 <p>Two things to note in the twurl example above:</p>
 <ul>
-<li>For <i>MY_ACCOUNT_ID</i>, use the 5-character string in the URL after logging into ads.twitter.com.
+<li>For <i>MY_ACCOUNT_ID</i>, use the string in the URL after logging into ads.twitter.com: <code>https://ads.twitter.com/accounts/MY_ACCOUNT_ID/campaigns_dashboard</code>
 <li>For <i>MY_MEDIA_ID</i>, read how to upload media on our <a href="https://dev.twitter.com/rest/public/uploading-media">Guide to Uploading Media</a>. (As a shortcut, you can tweet out an image in the UI and query back the tweet's media.id_str.)
 </ul>
 <p>The response you will receive will look like the following:</p>
